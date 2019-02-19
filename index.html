@@ -23,12 +23,15 @@ QQ:465475999
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="author" content="及,E6ther" />
-    <meta name="keywords" content="及,E6ther.com,时空机" />
-    <meta name="description" content="世间安得双全法,不负如来不负卿" />
+    <meta name="author" content="及,E6ther"/>
+    <meta name="keywords" content="及,e6ther.com,时空机"/>
+    <meta name="description" content="世间安得双全法,不负如来不负卿"/>
     <title>时空机</title>
     <link href="css/e6.css" rel="stylesheet"/>
     <link href="//qqq.e6ther.com/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <script src="//at.alicdn.com/t/font_1045077_5vaa0gi9xmf.js"></script>
+    <script src="js/e6.js"></script>
 </head>
 
 <body>
@@ -41,130 +44,47 @@ QQ:465475999
     </header>
 
     <div id="menu">
-        <div id="left">
-
-            <!--<a href="https://blog.e6ther.com">Blog</a>-->
-
-        </div>
         <div id="img">
-
-            <!--<img src="//qqq.e6ther.com/blog/img/tx/images2.jpg" alt="tx" id="logo"/>-->
-
+            <a href='javascript:void(0)'>
+                <img src="img/image2.jpg" alt="tx" id="logo"/>
+            </a>
         </div>
-        <div id="right">
 
-            <!--<a href="https://blog.e6ther.com/about">About</a>-->
+        <div class="link">
+            <a href="https://www.e6ther.com"><span>B</span>log</a>
+            <a href="https://github.com/E6ther"><span>G</span>ithub</a>
+            <a href="#" onclick="toOthers()"><span>O</span>thers</a>
+            <a href="https://www.e6ther.com/about.html"><span>A</span>bout</a>
+        </div>
+    </div>
 
+    <div id="others" class="display-none">
+        <div id="row1" class="row">
+            <a href="https://www.skji.net/2048/">2048</a>
+            <a href="https://www.skji.net/index-v1/">index v1</a>
+        </div>
+        <div id="return" class="row">
+            <a href="#" onclick="returnMenu()"><span>Return</span></a>
         </div>
     </div>
 
     <footer>
-        Copyright © 2018
-        <a href="//skji.net">及 - E6ther</a>.
-        <br />
-        All Rights Reserved.
+        Copyright © 2019
+        <a href="//skji.net">及
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-heart-copy"></use>
+            </svg>
+            E6ther</a>.
+        <br/>
     </footer>
 
 </div>
 
 <div id="particles-js"></div>
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
 
-<script src="js/particles.min.js"></script>
-<script src="js/app.js"></script>
-<script>
-    function f(idd, str1, str2, str3, t1, t2, t3) {
 
-        let en1 = 0, enn = 0, en2 = 0;
-        let flag = true;
-
-        function typing() {
-            let divTyping = document.getElementById(idd);
-
-            if (en1 < str1.length) {
-                divTyping.innerHTML = str1.slice(0, en1++) + str3;
-                ++enn;
-                setTimeout(function () {
-                    typing(idd);
-                }, t1);
-            }
-            else if (en1 === str1.length && enn !== -1) {
-                if (flag === true) {
-                    divTyping.innerHTML = str1.slice(0, enn--);
-                    setTimeout(function () {
-                        flag = false;
-                        typing(idd);
-                    }, t3);
-                    return;
-                }
-                divTyping.innerHTML = str1.slice(0, enn--) + str3;
-                setTimeout(function () {
-                    typing(idd);
-                }, t2);
-            }
-            else if (en2 < str2.length) {
-                divTyping.innerHTML = str2.slice(0, en2++) + str3;
-                setTimeout(function () {
-                    typing(idd);
-                }, t1);
-            }
-            else {
-                divTyping.innerHTML = str2.slice(0, en2);
-            }
-        }
-
-        typing();
-    }
-
-
-        window.onload = function () {
-            console.log("%cCreated by E6ther.\nQQ:465475999", "color: #EEEEEE; background-image: linear-gradient(90deg, rgb(47, 172, 178) 100%, rgb(45, 190, 96) 0%); padding: 5px;");
-            setTimeout(function () {
-                f('h1', '时 空 机', 'S K J I', '_', 250, 150, 1000);
-                setTimeout(function () {
-                    f('h2', '', 'Through time and space, only to find you.', '_', 130, 80, 0);
-                    setTimeout(function () {
-                        let img = document.createElement("img");
-                        img.id = 'logo';
-                        img.src = '//qqq.e6ther.com/blog/img/tx/images2.jpg';
-                        img.alt = '头像';
-                        let fa = document.getElementById('img');
-                        fa.appendChild(img);
-
-                        let l_a = document.createElement("a");
-                        l_a.id = "left_a";
-                        l_a.href = "https://blog.e6ther.com";
-                        fa = document.getElementById("left");
-                        fa.appendChild(l_a);
-                        l_a.innerHTML = "Blog";
-
-                        let r_a = document.createElement("a");
-                        r_a.id = "right_a";
-                        r_a.href = "https://blog.e6ther.com/about.html";
-                        fa = document.getElementById("right");
-                        fa.appendChild(r_a);
-                        r_a.innerHTML = "About";
-
-                        let time = null;
-                        clearInterval(time);
-                        time = setInterval(function () {
-                            let logo = document.getElementById('logo');
-                            let l_a = document.getElementById('left_a');
-                            let r_a = document.getElementById('right_a');
-                            let op = logo.style.opacity * 100;
-                            if (op >= 50) {
-                                clearInterval(time);
-                            }
-                            logo.style.opacity = (op + 2) / 100;
-                            l_a.style.opacity = (op + 2) / 100;
-                            r_a.style.opacity = (op + 2) / 100;
-                            // console.log(l_a.style.opacity);
-                        }, 120);
-                    }, 5000);
-                }, 5500);
-            }, 300);
-
-        }
-</script>

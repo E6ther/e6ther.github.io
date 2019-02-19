@@ -1,7 +1,7 @@
-/*@font-face {*/
-    /*font-family: 'Arial Black';*/
-    /*src: url("../font/ArialBlack.ttf"), url("../font/ArialBlack.eot");*/
-/*}*/
+@font-face {
+    font-family: 'Arial Black';
+    src: url("../font/ArialBlack.ttf"), url("../font/ArialBlack.eot");
+}
 
 html,
 body {
@@ -9,7 +9,11 @@ body {
     color: #C0C0C0;
     text-align: center;
     font-family: 'Arial Black', SimHei, sans-serif;
+    font-size: 1.2vw;
+}
 
+.display-none {
+    display: none !important;
 }
 
 #main {
@@ -22,81 +26,142 @@ body {
 }
 
 header {
-    padding: 10vh 0 10vh 0;
+    padding: 8vh 0 8vh 0;
 }
 
 #h1 {
-    font-size: 7.5vmax;
-    text-align: center;
+    font-size: 5vw;
 }
 
 #h2 {
-    font-size: 1.4vmax;
-    text-align: center;
+    font-size: 1.4vw;
 }
 
 #menu {
-    font-size: 1.4vmax;
-    text-align: center;
+    font-size: 1.4vw;
     padding: 0;
     margin: 0 auto;
     clear: both;
-}
-
-#left {
-    width: 10vmax;
-    display: inline-block;
-    /*float: left;*/
-    /*background-color: #b61924;*/
+    display: none;
 }
 
 #img {
-    width: 27vmax;
+    width: 27vw;
     display: inline-block;
+    margin-bottom: 8vh;
     /*float: left;*/
     /*background-color: #13E8E9;*/
 }
 
-#right {
-    width: 10vmax;
-    display: inline-block;
-    /*float: left;*/
-    /*background-color: blue;*/
-}
-
 #logo {
-    height: 15vmax;
-    width: 15vmax;
+    height: 15vw;
+    width: 15vw;
     border-radius: 50%;
     border: 0.3vmax solid #111111;
     box-shadow: 0 0 12vmax #C0C0C0;
-    opacity: 0;
+    opacity: 0.5;
     transition: all 2s;
 }
 
 #logo:hover {
     border: 0.3vmax solid #C0C0C0;
-    box-shadow: 0 0 3vmax #C0C0C0 !important;
-    opacity: 0.9 !important;
+    box-shadow: 0 0 3vmax #C0C0C0;
+    opacity: 0.9;
     transform: rotate(15deg);
 }
 
-#menu a {
-    display: block;
-    text-decoration: none;
-    background-color: #111111;
-    color: #C0C0C0;
-    padding: 10px 8px;
-    margin: 1.5vmax;
-    border-radius: 0.5vh;
-    opacity: 0;
-    /*transition: all 1s;*/
+#menu .link {
+    font-size: 0;
+    margin-bottom: 15px;
 }
 
-#menu a:hover {
+#menu .link a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgba(17, 17, 17, 0.8);
+    color: #C0C0C0;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#menu .link a span {
+    color: #b61924;
+}
+
+#menu .link a:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#menu .link a:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: none;
+}
+
+#menu .link a:hover {
     color: #F0F0F0;
     background-color: transparent;
-    opacity: 0.9 !important;
+}
+
+#menu .link a:hover span {
+    color: #ed2934;
+}
+
+@keyframes menu-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#menu.appear {
+    display: block;
+    animation: menu-appear 3s;
+}
+
+#menu.imme-appear {
+    display: block;
+}
+
+#others .row {
+    font-size: 0;
+    margin-bottom: 15px;
+}
+
+#others .row a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgba(17, 17, 17, 0.8);
+    color: #C0C0C0;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#others .row a:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#others .row a:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#others .row a:hover {
+    color: #F0F0F0;
+    background-color: transparent;
+}
+
+#others .row a span {
+    color: #b61924;
+}
+
+#others #return a {
+    padding: 10px 40px;
+    font-size: 1.2rem;
 }
 
 footer {
@@ -104,12 +169,12 @@ footer {
     left: 0;
     right: 0;
     bottom: 1vh;
-    font-size: 1vmax;
+    font-size: 1vw;
 }
 
 footer a {
     color: #C0C0C0;
-    font-size: 1vmax;
+    text-decoration: none;
 }
 
 #particles-js {
@@ -121,4 +186,51 @@ footer a {
     width: 90vw;
     z-index: -1;
     padding: 0 5vw 0 5vw;
+}
+
+/**
+阿里巴巴图标
+ */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+@media screen and (max-aspect-ratio: 8/10) {
+
+    html {
+        font-size: 3vw;
+    }
+
+    #h1 {
+        font-size: 15vw;
+    }
+
+    #h2 {
+        font-size: 3vw;
+    }
+
+    #img {
+        width: 60vw;
+    }
+
+    #logo {
+        height: 50vw;
+        width: 50vw;
+        border: 0.6vh solid #111111;
+        box-shadow: 0 0 30vh #C0C0C0;
+    }
+
+    #logo:hover {
+        border: 0.6vh solid #C0C0C0;
+        box-shadow: 0 0 5vh #C0C0C0;
+
+    }
+
+    #img > a:active {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
 }
