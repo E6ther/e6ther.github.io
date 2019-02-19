@@ -153,7 +153,7 @@ window.onload = function () {
     document.body.addEventListener('click', bodyClick);
 
     if (getCookie('isFirst') === 'false') {
-        if (Date.now() - parseInt(getCookie('lastVisit')) < 1500) {
+        if (Date.now() - parseInt(getCookie('lastVisit')) < 3000) {
             Init();
         } else {
             immeFinsh();
